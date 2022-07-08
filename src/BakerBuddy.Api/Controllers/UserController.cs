@@ -1,5 +1,5 @@
 ﻿using BakerBuddy.Api.Helper;
-using BakerBuddy.Domain.Commands.User;
+using BakerBuddy.Domain.Commands.Users;
 using BakerBuddy.Domain.Dto;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

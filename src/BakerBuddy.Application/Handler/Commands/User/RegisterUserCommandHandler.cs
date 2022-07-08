@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BakerBuddy.Data;
 using BakerBuddy.Data.Entities;
-using BakerBuddy.Domain.Commands.User;
+using BakerBuddy.Domain.Commands.Users;
 using BakerBuddy.Domain.Dto;
 using BakerBuddy.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;

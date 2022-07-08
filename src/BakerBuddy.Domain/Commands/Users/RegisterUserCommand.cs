@@ -1,7 +1,7 @@
 ﻿using BakerBuddy.Domain.Dto;
 using MediatR;
 
-namespace BakerBuddy.Domain.Commands.User;
+namespace BakerBuddy.Domain.Commands.Users;
 
 public class RegisterUserCommand : IRequest
 {
