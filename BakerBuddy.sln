@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakerBuddy.Data.Abstraction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakerBuddy.Data", "src\BakerBuddy.Data\BakerBuddy.Data.csproj", "{86B533C4-C0F7-47CD-AC76-7B70AE213E79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakerBuddy.Domain", "src\BakerBuddy.Domain\BakerBuddy.Domain.csproj", "{80C00274-57FB-4D75-893E-573C388509CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakerBuddy.Application", "src\BakerBuddy.Application\BakerBuddy.Application.csproj", "{D381E3EE-BEDE-433B-A12F-0CC3D46A6651}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{86B533C4-C0F7-47CD-AC76-7B70AE213E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86B533C4-C0F7-47CD-AC76-7B70AE213E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86B533C4-C0F7-47CD-AC76-7B70AE213E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C00274-57FB-4D75-893E-573C388509CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C00274-57FB-4D75-893E-573C388509CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C00274-57FB-4D75-893E-573C388509CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C00274-57FB-4D75-893E-573C388509CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D381E3EE-BEDE-433B-A12F-0CC3D46A6651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D381E3EE-BEDE-433B-A12F-0CC3D46A6651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D381E3EE-BEDE-433B-A12F-0CC3D46A6651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D381E3EE-BEDE-433B-A12F-0CC3D46A6651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +49,8 @@ Global
 		{E42B0769-FD03-4BE9-BB30-7E4AB003B14D} = {077F40C2-5F49-4774-9B73-B08EAEEACB57}
 		{7370FEAC-AE97-4CF4-A5B2-AB0B3CDE4ED2} = {077F40C2-5F49-4774-9B73-B08EAEEACB57}
 		{86B533C4-C0F7-47CD-AC76-7B70AE213E79} = {077F40C2-5F49-4774-9B73-B08EAEEACB57}
+		{80C00274-57FB-4D75-893E-573C388509CB} = {077F40C2-5F49-4774-9B73-B08EAEEACB57}
+		{D381E3EE-BEDE-433B-A12F-0CC3D46A6651} = {077F40C2-5F49-4774-9B73-B08EAEEACB57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {508181D1-B663-4946-A2BE-FE40E784AA13}
