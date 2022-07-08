@@ -1,5 +1,7 @@
 ﻿namespace BakerBuddy.Api.Helper;
 
+#pragma warning disable CA1034
+#pragma warning disable CA1724
 public static class ApiRoutes
 {
     public const string Base = "api";
@@ -38,3 +40,5 @@ public static class ApiRoutes
         }
     }
 }
+#pragma warning restore CA1034
+#pragma warning restore CA1724

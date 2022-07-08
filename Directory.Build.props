@@ -19,7 +19,7 @@
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     <_SkipUpgradeNetAnalyzersNuGetWarning>true</_SkipUpgradeNetAnalyzersNuGetWarning>
-    <NoWarn>$(NoWarn);</NoWarn>
+    <NoWarn>$(NoWarn);CA1014;</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
