@@ -6,7 +6,7 @@ public class IngredientEntity
 
     public string Name { get; set; } = default!;
 
-    public int Amount { get; set; } = default!;
+    public uint Amount { get; set; } = default!;
 
     public RecipeEntity Recipe { get; set; } = default!;
 }
