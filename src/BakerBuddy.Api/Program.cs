@@ -2,9 +2,11 @@ using BakerBuddy.Api.Extensions;
 using BakerBuddy.Api.Options;
 using BakerBuddy.Application.Handler.Commands.User;
 using BakerBuddy.Application.Mappings.Profiles;
+using BakerBuddy.Application.Validators;
 using BakerBuddy.Data;
-using BakerBuddy.Domain.Commands.User;
+using BakerBuddy.Domain.Commands.Users;
 using BakerBuddy.Domain.Exceptions;
+using FluentValidation.AspNetCore;
 using Hellang.Middleware.ProblemDetails;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,7 @@ builder.Host.UseSerilog((context, config) => config.ReadFrom.Configuration(conte
 // Add services to the container.
 services.AddAutoMapper(typeof(UserEntityProfile));
 services.AddMediatR(typeof(RegisterUserCommand), typeof(RegisterUserCommandHandler));
+services.AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<UserDataDtoValidator>());
 
 services.AddDbContext<BakerBuddyDbContext>(options =>
 {
@@ -54,7 +57,10 @@ services.AddScoped<IBakerBuddyDbContext>(provider =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
+services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations();
+});
 
 var app = builder.Build();
 
