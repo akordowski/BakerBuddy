@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\User\" />
-    <Folder Include="Dto\" />
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
   </ItemGroup>
 
