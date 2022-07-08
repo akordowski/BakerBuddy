@@ -6,6 +6,8 @@ namespace BakerBuddy.Data;
 
 public class BakerBuddyDbContext : DbContext, IBakerBuddyDbContext
 {
+    public DbSet<IngredientEntity> Ingredient => Set<IngredientEntity>();
+    public DbSet<RecipeEntity> Recipe => Set<RecipeEntity>();
     public DbSet<UserEntity> User => Set<UserEntity>();
 
     public BakerBuddyDbContext()
@@ -25,6 +27,8 @@ public class BakerBuddyDbContext : DbContext, IBakerBuddyDbContext
         }
 
         // Tables
+        modelBuilder.ApplyConfiguration(new IngredientEntityConfiguration());
+        modelBuilder.ApplyConfiguration(new RecipeEntityConfiguration());
         modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
     }
 }
