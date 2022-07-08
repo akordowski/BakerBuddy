@@ -3,7 +3,7 @@ using MediatR;
 
 namespace BakerBuddy.Domain.Queries.Ingredients;
 
-public class GetIngredientQuery : IRequest<IngredientDetailDto?>
+public class GetIngredientQuery : IRequest<IngredientDto?>
 {
     public int IngredientId { get; }
 

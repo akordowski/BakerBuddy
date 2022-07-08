@@ -4,9 +4,9 @@ using MediatR;
 
 namespace BakerBuddy.Application.Handler.Queries.Ingredients;
 
-public class GetIngredientQueryHandler : IRequestHandler<GetIngredientQuery, IngredientDetailDto>
+public class GetIngredientQueryHandler : IRequestHandler<GetIngredientQuery, IngredientDto?>
 {
-    public Task<IngredientDetailDto> Handle(
+    public Task<IngredientDto?> Handle(
         GetIngredientQuery request,
         CancellationToken cancellationToken)
     {
