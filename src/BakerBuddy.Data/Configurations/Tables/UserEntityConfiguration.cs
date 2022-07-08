@@ -1,4 +1,4 @@
-﻿using BakerBuddy.Data.Abstractions.Entities;
+﻿using BakerBuddy.Data.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BakerBuddy.Data.Configurations.Tables;

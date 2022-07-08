@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BakerBuddy.Data;
 
-public class BakerBuddyDbContext : DbContext, IDbContext
+public class BakerBuddyDbContext : DbContext, IBakerBuddyDbContext
 {
     public DbSet<UserEntity> User => Set<UserEntity>();
 
