@@ -1,5 +1,6 @@
 ﻿using BakerBuddy.Api.Helper;
 using BakerBuddy.Domain.Commands.Ingredients;
+using BakerBuddy.Domain.Dto;
 using BakerBuddy.Domain.Queries.Ingredients;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -23,9 +24,11 @@ public class IngredientController : ControllerBase
 
     [HttpPost(ApiRoutes.Ingredient.Post)]
     [SwaggerOperation("Creates a new ingredient.")]
-    public async Task<ActionResult> CreateIngredientAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult> CreateIngredientAsync(
+        [FromBody] IngredientDataDto ingredient,
+        CancellationToken cancellationToken)
     {
-        var command = new CreateIngredientCommand();
+        var command = new CreateIngredientCommand(ingredient);
         await _sender.Send(command, cancellationToken);
 
         return NoContent();
@@ -50,9 +53,11 @@ public class IngredientController : ControllerBase
 
     [HttpPut(ApiRoutes.Ingredient.Put)]
     [SwaggerOperation("Updates a ingredient.")]
-    public async Task<ActionResult> UpdateIngredientAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult> UpdateIngredientAsync(
+        [FromBody] IngredientDto ingredient,
+        CancellationToken cancellationToken)
     {
-        var command = new UpdateIngredientCommand();
+        var command = new UpdateIngredientCommand(ingredient);
         await _sender.Send(command, cancellationToken);
 
         return NoContent();

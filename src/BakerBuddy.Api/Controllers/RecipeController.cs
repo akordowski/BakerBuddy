@@ -20,9 +20,11 @@ public class RecipeController : ControllerBase
 
     [HttpPost(ApiRoutes.Recipe.Post)]
     [SwaggerOperation("Creates a new recipe.")]
-    public async Task<ActionResult> CreateRecipeAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult> CreateRecipeAsync(
+        [FromBody] RecipeDataDto recipe,
+        CancellationToken cancellationToken)
     {
-        var command = new CreateRecipeCommand();
+        var command = new CreateRecipeCommand(recipe);
         await _sender.Send(command, cancellationToken);
 
         return NoContent();
@@ -30,7 +32,7 @@ public class RecipeController : ControllerBase
 
     [HttpGet(ApiRoutes.Recipe.Get)]
     [SwaggerOperation("Get a recipe.")]
-    public async Task<ActionResult<RecipeDetailDto>> GetRecipeAsync(
+    public async Task<ActionResult<RecipeDto>> GetRecipeAsync(
         [FromRoute(Name = "id")] int recipeId,
         CancellationToken cancellationToken)
     {
@@ -47,7 +49,7 @@ public class RecipeController : ControllerBase
 
     [HttpGet(ApiRoutes.Recipe.Ingredient.GetAll)]
     [SwaggerOperation("Get a recipe ngredients.")]
-    public async Task<ActionResult<RecipeDetailDto>> GetRecipeIngredientsAsync(
+    public async Task<ActionResult<IEnumerable<IngredientDto>>> GetRecipeIngredientsAsync(
         [FromRoute(Name = "id")] int recipeId,
         CancellationToken cancellationToken)
     {
@@ -64,9 +66,11 @@ public class RecipeController : ControllerBase
 
     [HttpPut(ApiRoutes.Recipe.Put)]
     [SwaggerOperation("Updates a recipe.")]
-    public async Task<ActionResult> UpdateRecipeAsync(CancellationToken cancellationToken)
+    public async Task<ActionResult> UpdateRecipeAsync(
+        [FromBody] RecipeDto recipe,
+        CancellationToken cancellationToken)
     {
-        var command = new UpdateRecipeCommand();
+        var command = new UpdateRecipeCommand(recipe);
         await _sender.Send(command, cancellationToken);
 
         return NoContent();
