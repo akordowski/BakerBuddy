@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BakerBuddy.Data;
+using BakerBuddy.Data.Entities;
 using BakerBuddy.Domain.Commands.Ingredients;
 using Serilog;
 
@@ -21,10 +22,18 @@ public class CreateIngredientCommandHandler : CommandHandler<CreateIngredientCom
         _logger = logger;
     }
 
-    public override Task Handle(
+    public override async Task Handle(
         CreateIngredientCommand request,
         CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        if (request is null)
+        {
+            throw new ArgumentNullException(nameof(request));
+        }
+
+        var ingredient = _mapper.Map<IngredientEntity>(request.Ingredient);
+
+        await _dbContext.Ingredient.AddAsync(ingredient, cancellationToken).ConfigureAwait(false);
+        await _dbContext.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 }
