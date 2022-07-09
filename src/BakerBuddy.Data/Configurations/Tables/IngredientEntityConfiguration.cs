@@ -31,7 +31,7 @@ public class IngredientEntityConfiguration : TableEntityConfiguration<Ingredient
 
         builder.HasOne(d => d.Recipe)
             .WithMany(p => p.Ingredients)
-            .HasForeignKey(d => d.IngredientId)
+            .HasForeignKey(d => d.RecipeId)
             .OnDelete(DeleteBehavior.Cascade)
             .HasConstraintName("FK_Ingredient_Recipe");
     }

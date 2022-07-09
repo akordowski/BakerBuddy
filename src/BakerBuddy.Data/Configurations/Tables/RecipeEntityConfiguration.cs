@@ -41,7 +41,7 @@ public class RecipeEntityConfiguration : TableEntityConfiguration<RecipeEntity>
 
         builder.HasOne(d => d.User)
             .WithMany(p => p.Recipes)
-            .HasForeignKey(d => d.RecipeId)
+            .HasForeignKey(d => d.UserId)
             .OnDelete(DeleteBehavior.Cascade)
             .HasConstraintName("FK_Recipe_User");
     }
