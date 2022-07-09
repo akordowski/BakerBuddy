@@ -9,16 +9,17 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>$(NoWarn);CA1014;CA1063;CA1707;CA1711;CA1724;CA1816;VSTHRD200;</NoWarn>
+    <NoWarn>$(NoWarn);CA1014;CA1063;CA1707;CA1711;CA1724;CA1816;CA2007;VSTHRD200;</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>$(NoWarn);CA1014;CA1063;CA1707;CA1711;CA1724;CA1816;VSTHRD200;</NoWarn>
+    <NoWarn>$(NoWarn);CA1014;CA1063;CA1707;CA1711;CA1724;CA1816;CA2007;VSTHRD200;</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="FluentAssertions" Version="6.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.6" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageReference Include="Moq" Version="4.18.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -43,6 +44,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BakerBuddy.Application\BakerBuddy.Application.csproj" />
+    <ProjectReference Include="..\..\src\BakerBuddy.Data\BakerBuddy.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

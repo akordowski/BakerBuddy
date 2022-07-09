@@ -23,5 +23,7 @@ public class UpdateRecipeCommandHandlerTests : IDisposable
 
     public void Dispose()
     {
+        _fixture.ResetDb();
+        _fixture.ResetMocks();
     }
 }

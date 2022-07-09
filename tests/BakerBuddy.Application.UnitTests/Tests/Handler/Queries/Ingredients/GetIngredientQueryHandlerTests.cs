@@ -23,5 +23,7 @@ public class GetIngredientQueryHandlerTests : IDisposable
 
     public void Dispose()
     {
+        _fixture.ResetDb();
+        _fixture.ResetMocks();
     }
 }
