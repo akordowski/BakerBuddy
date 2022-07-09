@@ -30,3 +30,9 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run tests'
+  inputs:
+    command: 'test'
+    projects: '**/*.UnitTests.csproj'
